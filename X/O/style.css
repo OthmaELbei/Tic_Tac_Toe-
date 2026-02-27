@@ -39,28 +39,36 @@ body {
   box-shadow: 0px 5px 13px rgba(0, 0, 0, 0);
 }
 #grid-container {
-  width: 70%;
-  height: 70%;
+  width: 300px;
+  height:1000px;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   border-radius: 10px;
   margin: 10px;
   padding: 30px;
   gap: 6px;
-  /* border:  2px solid #494747; */
-  /* background-color: rgb(15, 15, 15); */
   background-color: rgb(255, 213, 0);
 }
+
 .square {
-  background-color: rgba(101, 98, 98, 0.339);
+  background-color: rgba(96, 96, 96, 0.339);
+
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(0, 0, 0);
-  font-size: 40px;
-  font-family: "Gill Sans", "Trebuchet MS", sans-serif;
 
-  /* border: 2px solid ; */
+  font-size:30px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Times, 'Times New Roman', serif;
+
+  /* border: 2px solid red; */
+
+  box-sizing: border-box;
+}
+.square .square-content{
+  /* border: 2px solid #353535; */
+  width: 30px;
+  height: 40px;
 }
 .square:hover {
   background-color: rgba(53, 49, 49, 0.339);

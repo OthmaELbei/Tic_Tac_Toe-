@@ -4,6 +4,7 @@ let currentTurn = "X";
 let bordArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
 let conter = 0;
 let bolyan = false;
+let secend = "O";
 square.forEach((e) => {
   e.addEventListener("click", () => {
     console.log(e);
@@ -17,15 +18,17 @@ square.forEach((e) => {
 
     //   ? (squareContent.textContent = "")
     //   : (squareContent.textContent = currentTurn);
+  secend = currentTurn;
     currentTurn == "X" ? (currentTurn = "O") : (currentTurn = "X");
     console.log(bordArray);
     tcheckresolt();
     if (conter == 9) {
-      alert("drew");
+      alert("dreddw");
     }
   });
   console.log(e.value);
 });
+const head = document.querySelector("#header h1");
 function tcheckresolt() {
   if (
     (bordArray[0] == bordArray[1] && bordArray[1] == bordArray[2]) ||
@@ -38,11 +41,14 @@ function tcheckresolt() {
     (bordArray[2] == bordArray[4] && bordArray[4] == bordArray[6])
   ) {
     alert("add in file");
+    head.textContent = `Ganie  ${secend}`
     bolyan = true;
   }
 }
-const button = document.querySelector(".action-btn");
-button.addEventListener("click", () => {
+console.log(head);
+function clearData()
+{
+  console.log(bolyan);
   if (conter == 9 || bolyan) {
     for (let i = 0; i < 9; i++) {
       bordArray[i] = `${i}`;
@@ -50,5 +56,11 @@ button.addEventListener("click", () => {
     square.forEach((e) => {
       e.textContent = "";
     });
+    conter = 0;
+    bolyan =false;
+    head.textContent = `Ganie  `
   }
-});
+}
+const button = document.querySelector(".action-btn");
+button.addEventListener("click",clearData);
+
